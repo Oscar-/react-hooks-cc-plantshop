@@ -1,14 +1,23 @@
-import React from "react";
+// import NewPlantForm, PlantList, Search components 
 import NewPlantForm from "./NewPlantForm";
 import PlantList from "./PlantList";
 import Search from "./Search";
 
-function PlantPage() {
+//function for plantPage
+//pass down cb functions as props
+function PlantPage({ plants, addPlant, updatePlant, searchPlant, updatePrice, deletePlant }) {
+
+  //pass down cb functions to child components
   return (
     <main>
-      <NewPlantForm />
-      <Search />
-      <PlantList />
+      <NewPlantForm addPlant={addPlant} />
+      <Search searchPlant={searchPlant} />
+      <PlantList 
+      plants={plants}
+      updatePlant={updatePlant}  
+      updatePrice={updatePrice}
+      deletePlant={deletePlant}
+       />
     </main>
   );
 }

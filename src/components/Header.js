@@ -1,5 +1,6 @@
-import React from "react";
 
+
+// no updates to Header component 
 function Header() {
   return (
     <header>
